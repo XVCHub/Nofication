@@ -1,9 +1,11 @@
 --currently not have a Nofication
-local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
-DiscordPopup:SetCopyText("copy link")
-DiscordPopup:SetCloseText("fuck off")
-DiscordPopup:SetDiscordLink("https://discord.gg/rTw5M8dRXN")
-DiscordPopup:SetLabelText("join the discord :3")
-DiscordPopup:SetImages("rbxassetid://18817097052", "rbxassetid://18817519330")
-DiscordPopup:SetPosition("right") -- "left", "center", "right"
-local popup = DiscordPopup:Create()
+if math.random() < 0.1 then -- 10% Chance
+    local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
+    DiscordPopup:SetCopyText("copy link")
+    DiscordPopup:SetCloseText("fuck off")
+    DiscordPopup:SetDiscordLink("https://discord.gg/rTw5M8dRXN")
+    DiscordPopup:SetLabelText("join the discord :3")
+    DiscordPopup:SetImages("rbxassetid://18817097052", "rbxassetid://18817519330")
+    DiscordPopup:SetPosition("right")
+    local popup = DiscordPopup:Create()
+end
