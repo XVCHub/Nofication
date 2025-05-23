@@ -1,4 +1,19 @@
---currently not have a Nofication
+--count system
+local HttpService = game:GetService("HttpService")
+local API_URL = "https://yapping-black.vercel.app/api"
+local function incrementCount()
+    if syn then
+        syn.request({ Url = API_URL, Method = "POST" })
+    elseif request then
+        request({ Url = API_URL, Method = "POST" })
+    else
+        pcall(function()
+            HttpService:RequestAsync({ Url = API_URL, Method = "POST" })
+        end)
+    end
+end
+incrementCount()
+--nofication
 if math.random() < 0.1 then -- 10% Chance
     local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
     DiscordPopup:SetCopyText("copy link")
