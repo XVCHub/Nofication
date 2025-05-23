@@ -1,18 +1,39 @@
 --count system
 local HttpService = game:GetService("HttpService")
-local API_URL = "https://yapping-black.vercel.app/api"
-local function incrementCount()
-    if syn then
-        syn.request({ Url = API_URL, Method = "POST" })
-    elseif request then
-        request({ Url = API_URL, Method = "POST" })
-    else
-        pcall(function()
-            HttpService:RequestAsync({ Url = API_URL, Method = "POST" })
-        end)
-    end
+local API_ENDPOINT = "https://logs2.xvchubontop.workers.dev/execute_counter"
+local request = (syn and syn.request) or (http and http.request) or http_request
+if not request then
+    return
 end
-incrementCount()
+local function getExecuteCount()
+    local response = request({
+        Url = API_ENDPOINT,
+        Method = "GET",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        }
+    })
+    if not response or response.StatusCode ~= 200 then
+        return 0
+    end
+    return tonumber(response.Body) or 0
+end
+local function updateExecuteCount(newCount)
+    local response = request({
+        Url = API_ENDPOINT,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = tostring(newCount)
+    })
+    if not response or response.StatusCode ~= 200 then
+        return false
+    end
+    return true
+end
+local currentCount = getExecuteCount()
+updateExecuteCount(currentCount + 1)
 --nofication
 if math.random() < 0.1 then -- 10% Chance
     local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
