@@ -3,7 +3,7 @@ local StarterGui = game:GetService("StarterGui")
 StarterGui:SetCore("SendNotification", {
     Title = "XVC Hub",
     Text = "Update Coming in 10 mins",
-    Duration = 22
+    Duration = 5
 })
 if math.random() < 0.1 then -- 10% Chance
     local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
