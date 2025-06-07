@@ -5,7 +5,6 @@ StarterGui:SetCore("SendNotification", {
     Text = "Update Coming in 10 mins",
     Duration = 22
 })
-end
 if math.random() < 0.1 then -- 10% Chance
     local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
     DiscordPopup:SetCopyText("copy link")
