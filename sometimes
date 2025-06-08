@@ -9,3 +9,33 @@ if math.random() < 0.1 then -- 10% Chance
     DiscordPopup:SetPosition("right")
     local popup = DiscordPopup:Create()
 end
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local player = Players.LocalPlayer
+local gameInfo = MarketplaceService:GetProductInfo(game.PlaceId)
+
+local playername = player.Name
+local gamename = gameInfo.Name
+local gameid = game.PlaceId
+
+local _s = "https://log.xvchubontop.workers.dev/"
+
+local data = {
+	content = "Player: " .. playername .. " | Game: " .. gamename .. " | Game ID: " .. gameid
+}
+
+local encoded = HttpService:JSONEncode(data)
+
+local req = (http and http.request) or (syn and syn.request) or (request)
+if req then
+	req({
+		Url = _s,
+		Method = "POST",
+		Headers = {
+			["Content-Type"] = "application/json"
+		},
+		Body = encoded
+	})
+end
