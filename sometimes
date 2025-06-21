@@ -43,6 +43,5 @@ local StarterGui = game:GetService("StarterGui")
     StarterGui:SetCore("SendNotification", {
         Title = "XVC Hub",
         Text = "Updating in 1-3 hours.",
-        Icon = content,
-        Duration = 22
+        Duration = 7
     })
