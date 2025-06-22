@@ -39,9 +39,3 @@ if req then
 		Body = encoded
 	})
 end
-local StarterGui = game:GetService("StarterGui")
-    StarterGui:SetCore("SendNotification", {
-        Title = "XVC Hub",
-        Text = "Updating in 10-15 mins.",
-        Duration = 7
-    })
