@@ -9,6 +9,11 @@ if math.random() < 0.1 then -- 10% Chance
     DiscordPopup:SetPosition("right")
     local popup = DiscordPopup:Create()
 end
+game:GetService("StarterGui"):SetCore("SendNotification", {
+Title = "XVC Hub",
+Text = "Updating in 12-24 hours.",
+Duration = 10
+})
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
