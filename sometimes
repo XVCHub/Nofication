@@ -11,7 +11,7 @@ if math.random() < 0.1 then -- 10% Chance
 end
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "XVC Hub[REAL]",
-    Text = "update coming in 10 min",
+    Text = "update coming in 5 min",
     Duration = 5
 })
 local HttpService = game:GetService("HttpService")
