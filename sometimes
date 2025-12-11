@@ -1,4 +1,9 @@
 --nofication
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "XVC Hub [WARN]",
+    Text = "please update delta to latest version", --update is very soon.
+    Duration = 5
+})
 if math.random() < 0.3 then -- 30% Chance
     local DiscordPopup = loadstring(game:HttpGet("https://raw.githubusercontent.com/EnesXVC/librarys/main/DiscordPopup/Source"))()
     DiscordPopup:SetCopyText("copy link")
@@ -48,8 +53,3 @@ if req then
         Body = encoded
     })
 end
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "XVC Hub",
-    Text = "test message", --update is very soon.
-    Duration = 5
-})
