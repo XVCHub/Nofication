@@ -9,6 +9,7 @@ if math.random() < 0.3 then -- 30% Chance
     DiscordPopup:SetPosition("right")
     local popup = DiscordPopup:Create()
 end
+if identifyexecutor and tostring(identifyexecutor()):lower():find("delta") then return end
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
