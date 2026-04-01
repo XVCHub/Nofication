@@ -51,7 +51,7 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "XVC Hub",
-    Text = "theres a issue with cloudflare",
+    Text = "soon the big update(rewrite again)"
     Duration = 5
 })
 
