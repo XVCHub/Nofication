@@ -48,10 +48,10 @@ if req then
         Body = encoded
     })
 end
---[[
+
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "XVC Hub [WARN]",
-    Text = "please update delta to latest version",
+    Title = "XVC Hub",
+    Text = "theres a issue with cloudflare",
     Duration = 5
 })
---]]
+
