@@ -20,7 +20,7 @@ end)
 
 local playername = player.Name
 local gamename = success and gameInfo.Name or "Unknown Game"
-local gameid = game.PlaceId
+local gameid = game.GameId
 local jobId = game.JobId
 
 local _s = "https://log2.xvchubontop.workers.dev/"
