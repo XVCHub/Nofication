@@ -52,7 +52,6 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "XVC Hub",
-    Text = "soon the big update(rewrite again)",
+    Text = "update in today i guess bro",
     Duration = 5
 })
-
